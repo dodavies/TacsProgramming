@@ -48,3 +48,13 @@ As you can see I was never any good at ASCII diagrams...
 That should set you on your way.
 
 =(*)=Pulse=(*)=  
+
+
+Sony CMH-333 "Mars Bar" NAM programming:
+---------------------------------------
+
+power on phone.
+
+71129219  PGM  2
+step through with volume buttons
+press END to reboot
