@@ -1,0 +1,90 @@
+How to build and use a programming cable for the Ericsson GH337
+Also PH337, GH388
+
+This file instructs one on how to build a cable to reprogram the GH337 from a standard
+serial port. Much of this info is taken from a file "How to activate built-in calculator 
+and RBS-info", author unknown. Use of this cable may violate your phone's warrantee or your 
+service agreement. USE AT YOUR OWN RISK. 
+
+There has been a report that there is no calculator available on the PH337.
+
+Connect RS232 to phone via a TTL to RS232 converter.
+
+NOTE! You can NOT connect the RS232 directly to the phone,
+      you MUST use a TTL to RS232 converter!
+      
+        Pin 8   DC GND                           ->  ComPort GND
+        Pin 11  RXD (TTL serial data TO phone)   ->  ComPort TXD
+        Pin 12  TXD (TTL serial data FROM phone) ->  ComPort RXD
+
+Connect external 5 volts to Pin 9 (FLASH 5/12volts input)
+(Pin 6 SWDC5 [5 volts out] to pin 9 may also work, but have not tried it)
+
+Pin 1 is leftmost pin (near Mic), when looking at the front/bottom.
+
+The communications port parameters should be 8 data bits, 1 stop bit, and
+no parity. Communications speed can be as low as 9600 baud (maybe lower),
+but if set for 115200 baud, the phones operations are shown as they are
+done (i.e. communicating with RBS, reading SIM, etc.)
+ Here's an example:
+
+  From: Dave Plumb <dplumb@cix.compulink.co.uk>
+  ----------------------------------------------
+  RR_ACT_REQ , PLMN = F432 0003
+  MM state 4
+  
+  Get FCH on ARFCN = 618  Rxlev = -93
+
+  Get SCH on ARFCN = 618
+  Old TCXO value 128
+  Intermediate TCXO value 128
+  New TCXO value 128
+  FirstPhaseDiff = 1, SecondPhaseDiff = 1
+  ----------------------------------------------
+
+ 
+
+Power on phone by pressing "NO/ENDpwr".
+When performing its powerup sequence the phone will send two ">>"
+(ASCII 62 decimal) characters. Within 1 second, reply to it by
+sending the 4 character sequence "TP1<CR>". [ Dr Who's Note: Another
+source says TP1:<cr> ]
+
+If everything whent fine you should get the "OK" prompt back.
+
+
+Test the TEST PROGRAM by sending the commands terminated by a <CR>:
+
+        PROG 0          (shows Test Program product number info)
+        PROG 1          (shows Test Program product date info)
+        PROG 3          (Shows Main Application product number info)
+        PROG D          (Shows Main Application product date info)
+
+EEWR [address] [value]   writes a value to the given address, given in hexadecimal. The 
+following functions can be done with this. I am sure there are many more. These functions 
+require the phone to be turned off, then on again after this programming.
+
+        EEWR 047A 	01 = enable built-in calculator and RBS info (no
+                             calculator on PH337), 00 = disable
+	EEWR 045B	00 = disable electronic lock, place 00 in all these locations
+	EEWR 045C	00 = disable electronic lock, place 00 in all these locations
+	EEWR 045D	00 = disable electronic lock, place 00 in all these locations
+	EEWR 045E	00 = disable electronic lock, place 00 in all these locations
+	EEWR 045F	00 = disable electronic lock, place 00 in all these locations
+	EEWR 0460	00 = disable electronic lock, place 00 in all these locations
+	EEWR 0461	00 = disable electronic lock, place 00 in all these locations
+	EEWR 0462	00 = disable electronic lock, place 00 in all these locations
+	EEWR 0463	00 = disable electronic lock, place 00 in all these locations
+	EEWR 0464	00 = disable electronic lock, place 00 in all these locations
+	EEWR 0465	00 = disable electronic lock, place 00 in all these locations
+	EEWR 0466	00 = disable electronic lock, place 00 in all these locations
+	EEWR 1587	00 = disable service provider lock
+
+EERE [address]  reads the contents of a single memory address. Pressing G
+several times gets wierd features - these still need to be mapped. (thanks
+Nick Ustinov). K returns from this mode
+
+PREA [bank] [address] [bytes-to-read]  displays the contents of the memory starting at 
+[address]. The value at the end is the checksum for the bytes read. [bank] can be 00 
+through 7F, [address] can be 0000 through BFFF, and [bytes-to-read] can be 0000 through BFFF.
+PREA FF returns the checksum of the entire application.
