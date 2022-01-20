@@ -1,0 +1,15 @@
+                  
+                  MOTOROLA 6.6 AND 9.11 COMMAND LINE OPTIONS
+                  ------------------------------------------
+
+
+heh heh heh startup options, you can run it with any 
+combination of these options:-
+
+/NAM    -allows nam programming
+/E7     -enables ESN programming
+/LPT    -prints a label out on LPT1 (with the customers phone details on it)
+/NVR    -erases the phones' non-volatile-ram (ie wipes the memory and 
+         restores to factory default)
+/ESP    - Edit Special Parameters (ie, reprog the function bytes in the NAM)
+
