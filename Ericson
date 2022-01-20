@@ -1,0 +1,16 @@
+   Ericsson Accessory Connector Pin-outs
+
+1       Audio input
+2       +5V=External Power, 0V=Battery
+3       PA Speaker control
+4       Audio Ground
+5       Audio Output
+6       Power-on indicator 
+7       Charger control
+8       Digital/DC GND
+9       0V=normal,+5V=test, +12V=test+flash
+10      hangup signal
+11      TTL serial input
+12      TTL serial output
+13      Power Toggle (hold low 1 second)
+14      DC Power supply IN
