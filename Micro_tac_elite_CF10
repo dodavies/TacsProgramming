@@ -1,0 +1,78 @@
+                  MICRO-TAC ELITE CF-10 CABLE DIAGRAM
+          Brought to you by Vidiot and the Technical Advisory Group 
+                    email: vidiot@paranoia.com 
+                          tag@paranoia.com
+
+File created on March 18, 1996
+
+Below are the cable diagrams for making your own CF-10 Loader cable and 
+pin-outs for the MicroTac Elite Accessory RF Port.  Use at your own risk...
+I assume no responsibility for it's use or mis-use!  Above all...distribute
+this phile freely, as long as proper credit is given to me and the crew!
+Shoutouts to all da homies on #cellular....<u know who u r>- 
+
+        CF-10                                   PHONE
+
+20 & 21 JUMPERED 
+
+3--------------------------------------6 -LOGIC GROUND
+|                                      |
+GRND                                   9 -MAN TEST
+
+
+4--
+  |
+5-|
+  |
++12V
+                              SPST SWITCH
+18----------------------------/ /_--------------- 5 R DATA
+
+
+
+Part Two
+MicroTac Eleet Battery Connector features a new external connector which is
+functionally very similar to earlier MicroTac connectors, and now includes
+an external RF connection.  The pinout of the MicroTac Elite external 
+connector is as follows:
+                              Battery Connector Pinout
+      \              \        
+       \              \         Pin 1 ....battery ground
+        \              \        Pin 2 ....thermistor detect
+         \  4  3  2  1  \       Pin 3 ....battery B+
+          \  [] [] [] [] \      Pin 4 .... E-F battery data
+           \--------------\
+
+
+Part Three  
+Accessory RF Port        
+                        __________________            External Connector
+                       /                  \           Pinout
+                     /                      \         Pin 1.. audio grnd
+                   /                          \       Pin 2.. ext. B+
+                 /                              \     Pin 3.. T data
+               /                                  \   Pin 4.. O data
+             /______________________________________\ Pin 5.. R grnd
+                   |   |  |  |  |  |  |  |  |  |      Pin 6.. logic grnd.  
+              {0}  10  9  8  7  6  5  4  3  2  1      Pin 7.. audio out-on/off
+               \                                      Pin 8.. audio in
+   Accessory RF Port                                   Pin 9.. manual test
+   The RF level at this point                         Pin 10.. battery feedback
+   is approx. 2db lower than the level
+   at the antenna.
+
+
+The battery connector is fully compatible with all previous models.
+Also includes a fourth terminal which senses battery information from E+P 
+batteries.  There is no longer a recessed manual test connection at the 
+battery connector block since that function is now part of the external
+connector.
+**NOTE**
+The manual test pin is now located in the EXTERNAL CONNECTOR and NOT at the
+battery connector block!  MicroTac Elite phones may be placed in test mode
+by grounding the manual test pin during power-up, just like other Mot. 
+models.  Use caution when placing the phone into test mode or damage could
+occur to the external connector.  Manual test mode commands are the same
+as previous models.
+
+Have phun!!  Brought to you by: vidiot and T.A.G.
