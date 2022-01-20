@@ -1,0 +1,505 @@
+
+                         P3 Test operations and more.
+                         ============================
+
+Orignal Text file name for Upload is P3TST001.TXT (P3 TeST Manual) compiled
+and uploaded by Jono Bono (or soon to be just Jono) if you have any further
+information to contribute please add it then re-upload this file as the next
+avalible number. i.e. P3TST002.TXT etc.
+
+To SYSOP, please ensure any future uploads and amendments of this file have
+been done correctly. i.e. The file is still laid out in the same way with
+all instructions including this top section. Thanks ....JoNo.
+
+*** If you have examples of how to make use of some of the comands, please 
+add them to the end of this file under the "Notes and Examples" section or 
+put them in another file ***.
+
+ALSO... Please keep this file as basic ASCII (i.e. keyboard ASCII text, only) 
+and keep each line to a maximium 77 chars (i.e. last character in a long line
+would be in column 77 on your text editor), so that users of all different 
+systems can view it and edit it.
+
+If you want to print this file then you may need to space it into 66 line
+pages (dependant on Printer and/or System). Please "do not" include this
+spacing in any altered files that you may re-upload.
+
+**** leave the above intact and change the line below if you re-upload ****
+
+Current File = P3TST001.TXT dated 24/09/94 uploaded by Jono Bono (Jono).
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Useful information that relates to the modified test chip avalible for the 
+NEC P3 mobile phones (May not cover all avalible commands).
+
+Please note: The contents of this entire document are for informational 
+purposes only and must not be used to break any laws, if you use any of 
+this information you are soley responceable for you own actions. OK!
+
+Here are some of the new and most useful commands.
+==================================================
+
+To enter the phone's serial number and phone number.
+----------------------------------------------------
+Power On, Enter ESN (11 digits) on keypad then STO 69, the phone should 
+now switch back to the display. (DO NOT enter eleven 0's sto 69, this will 
+disable the phone completely and beyond normal reset, can be useful <grin>).
+Note: If you ever need to use the eleven 0's then don't throw your phone
+away as there still are ways to reset it.
+
+Then press RCL *, RCL # 01 (test mode entered), RCL #71 and the phone 
+number will appear. Just enter the new phone number.
+i.e. providers code (4 digits) and then number (6 digits). 
+
+The provider code translations are as follows; 
+(please add to this list and re-upload this document, thanks).
+
+(0374) = 2345 (VodaFone) System A.
+(0378) = 2343 (VodaFone) System A.
+(0831) = 2344 (VodaFone) System A.
+(0836) = 2340 (VodaFone) System A.
+-----------------------------------
+(0585) = 2349 (Cellnet) System B.
+(0850) = 2346 (Cellnet) System B.
+(0860) = 2342 (Cellnet) System B.
+
+Press # for the rest of the phone menu or just to ensure that the number has 
+been stored. The only other item that needs to be changed is SYS=A or B. 
+You can also change the real numbers prefix, but this is only for "real" 
+number display purposes on the function command. i.e. FCN 33 will display 
+0836-XXXXXX or whatever, but the phone's number according to the cell 
+system is really 2340-XXXXXX. You may also wish to play with the other 
+settings, but please note the originals before doing so. 
+
+Once you have altered all of your settings, (note pressing # stores the
+setting, and moves to the next) press and hold CLR once the display is
+blank, press RCL # 02 to reboot the phone. Alternatively, you can just
+press PWR to turn it off, and PWR to turn it back on.
+
+Any further information on these extra options will be appreciated. 
+(Please note them here and re-upload this document).
+
+The lock code is obviously just the phone's lock code, however, it doesn't
+serve much good with a modified P3 rom, since one can jump into test mode
+from full lock! And then change the lock code....(You must enter test mode
+by pulling out the battery, and quickly putting it back in.)
+
+Home area has many possible values, however, for the purpose of the general
+Cellphone Phreaker, only three are used. If you have a Vodafone ESN^MIN
+pair, then enter 02051 here. This essentially means that you can receive
+calls on the other person's number.....The other values for home area are
+simply to tell the Cell where you live in the country. If you have a
+Cellnet ESN^MIN pair, then enter 03600, and if you don't want to receive
+calls, enter 00000. Note that if the other person has there phone turned on
+at the time that you use yours for incoming calls, then the Cell will
+automatically kill the ESN^MIN pair.
+
+Roam is for future use, and will not be used....It is basically for phones
+with Dual Nams, so they can use both Cellnet and Vodafone on the same
+ESN^MIN pair.
+
+Timer SW. This should always be on Voice CH. This is basically how the Cell
+will charge you fo the calls.....Voice CH works on both Cellnet and
+VodaFone, but Charge RT only works on Cellnet....This tells you how many
+units you have spent (Using FCN 1 menu.)
+
+Priority should basically be set rather high. If your local Cell is busy,
+and there are no free cells, and you have a priority of 15, then someone
+else will be disconnected, and your call will be allowed!
+
+Call Timer. This serves little for the Cellular Phreaker. It is best to
+leave this on Call Out. The function only is significant to those who
+actually pay the phone bill!
+
+To make the phone scan all avalible channels (Voice only).
+==========================================================
+Later in this document will be some test commands, to enter test mode on 
+the modified chip you will always need to enter the ESN again, then RCL * 
+and RCL #01 for test mode. (NOTE: There is a faster way of entering the test 
+mode by simply removing the battery and quicly putting it back, the phone 
+will go into test mode.)
+
+To Scan (Once in test mode) press RCL # 12 (Speaker on), RCL # 69 then 4 
+digits (channel to start), then # (see this option in test manual text later 
+in this document for more details). Use * to pause.
+
+i.e. If you enter 0001 as the channel, the phone will start scanning each 
+channel from 1 to 600 and then 1329 to 2047. As soon as you hear voice you
+can press * to stay on that channel and * again to move on.
+
+Start of Test Commands.
+=======================
+These are listed as they are in the test manual, but please note that some
+commands may be different or act differently due to the modification on the
+chip.
+---------------------------------------------------------------------------
+Taken from DCU: 0708A
+Top of page reads: 147-102650X322A  TR5E1320-22A  APPENDIX A Test commands -
+                   - through keypad.
+
+NOTE: Enter each command by pressing RCL key, # key, and the proper command
+number. Some commands require additional numbers after a hyphen followed by
+the # key.
+
+    RCL, #, Number
+    RCL, #, Number, Additional Number, #
+
+When you enter the commands through the keypad, always give SUSPEND command
+(RCL, #, 01) before you press other commands except STATUS (RCL, #, 03) and
+STATUS REPEAT (RCL. #, 61, 1, #).
+
+0---------------17--------------33-----------------------------------------77
+^               ^               ^                                           ^
+Above is the coloumn ruler where each of the next sections starts and ends.
+Most remark paragraphs start at col 33 unless the Function name is long, then
+it will start at 1 or 2 spaces after the Function name. Notice that no chara-
+-cter is placed after col 77 (max).
+
+Key Entry       Function Name   Remarks
+=========       =============   =======
+RCL, #, 01      SUSPEND         All dots come on (not on Modified test chip)
+                                It terminates the normal mode, performs 
+                                initialization and awaits further test 
+                                commands.
+
+RCL, #, 02      RESTART         It teminates the test mode, enters the normal
+                                mode and restarts the call processing tasks.
+                                You hear a wake-up tone and momentarily the
+                                phone number appears on the display. You are
+                                now at receiving standby mode (normal mode).
+
+RCL, #, 03      STATUS          It shows the status information of the unit 
+                                by 16 digits on the display.
+                ----------      ----------
+Example:            119110          AAABCD
+                0003100363      EFGHIJKKKK
+                ----------      ----------
+Where:          AAA: Shows RSSI (Receiver Signal Strength) Value ranging from
+                     000 through to 255 (3 digits).
+                B:   Shows RXM (Receiver Audio Mute) or Receiver audio gate
+                     on/off. 1 = muted or gate off.
+                C:   Shows TXM (Transmitter Audio Mute) or Transmitter audio   
+                     gate on/off. 1 = muted or gate off.   
+                D:   Shows WS (Word Synchronization) in FOCC. 1 =WS acquired.        
+                E:   Shows B/I (Current state of the busy idle bit of FOCC).
+                     1 = idle  0 = busy.
+                F:   Shows CARR (carrier) on/off. 1 = off.   
+                G:   Shows ST (Signalling Tone) on/off. 1 = ST on.   
+                H:   Shows SAT (Supervisory Audio Tone) on/off. 0 = 5970Hz,  
+                     1 = 6000Hz,  2 = 6030Hz  and  3 = No SAT.
+                I:   Shows MODE. 1 = Control channel,  0 = Voice channel.   
+                J:   Shows Transmission Power Reduction Level.   
+                           0 = No reduction.
+                           1 = No reduction.
+                           2 = No reduction.
+                           3 = -4dB.
+                           4 = -8dB.
+                           5 = -12dB.
+                           6 = -16dB.
+                           7 = -20dB.
+                KKKK: Shows Channel Number, ranging from 0000 through 0600 &
+                      1329 through 2047 (4 digit).
+
+RCL, #, 04      RESET           Reset the autonomous timer to zero.
+
+RCL, #, 06      INIT            Initialize the transceiver unit to the 
+                                following state; 
+                                Carrier off.
+                                Attenuation 0dB.
+                                Receiver-Audio muted.
+                                Transmit-Audio muted.
+                                Signaling Tone (ST) off.
+                                Autonomous timer reset and it's periodic.
+                                SAT off.
+                                DTMF and Audio tones off.
+                                Received-voice Volume Max.
+                                Compandor off.
+
+RCL, #, 07      CARRIER-ON      Turn the TX carrier on.
+
+RCL, #, 08      CARRIER-OFF     Turn the TX carrier off.
+
+RCL, #, 09      LOAD-SYNTH      Set the synthesizer to the channel specified
+                                by up to 4 digits followed by # key (up to 4 
+                                digits = 0 through 600, 1329 through 2047).
+                ---------       ---------
+Example:        TEST MODE       TEST MODE      Pressing 333 and #
+                      09-          09-333
+                ---------       ---------
+
+RCL, #, 10      SET-ATTN        Set the RF power attenuation to the value
+                                specified by 1 digit followed by the # key
+                                (1 digit = 0 through 7).
+                ----------
+Example:        TEST  MODE      Pressing 4 for 8dB reduction
+                     10-4
+                ----------      0 to 2 = No reduction.
+                                3 = -4dB,  4 = -8dB,  5 = -12dB,
+                                6 = -16db,  7 = -20dB.
+
+RCL, #, 11      RXMUTE          Mute the receive-audio signal. No audio
+                                signal comes from the speaker.
+
+RCL, #, 12      RXUNMUTE        Unmute the receive-audio signal. Noise or
+                                Voice comes from the speaker.
+
+RCL, #, 13      TXMUTE          Mute the Transmit-audio signal.
+
+RCL, #, 14      TXUNMUTE        Unmute the Transmit-audio signal.
+
+RCL, #, 15      RESET OFF       Discontinue periodic resetting of the
+                                autonomous timer (allow timer to time out).
+
+RCL, #, 16      STON            Transmit a continuious Signalling Tone (ST).
+
+RCL, #, 17      STOFF           Stop transmission of Signalling Tone (ST).
+
+RCL, #, 23      VERSION         Show the software version-information on the
+                                display.
+                                ----------
+                                  V-2.0
+                                 (V-9011)
+                                ----------
+
+RCL, #, 24      READ SN         Show the production serial number of the
+                                phone. i.e. ----------
+                                            Serial No.
+                                            22A-000001
+                                            ----------
+
+RCL, #, 32      SATON           Enable the transmit of SAT. One digit follow-
+                                -ing the command code shall contain the color
+                                code of the SAT frequency that the transceiv-
+                                -er unit may expect to receive. SAT shall be
+                                transmitted if the carrier is currently on.
+                                COLOR CODE DIGIT.       SAT FREQUENCY.
+                                =================       ==============
+                                        0                   5970Hz
+                                        1                   6000Hz
+                                        2                   6030Hz
+
+RCL, #, 33      SATOFF          Disable the transmission of SAT.
+
+RCL, #, 34      CDATA           Transmits 6 bytes NAM data as 240 bits data.
+                                DEFAULT = 01, 02, 03, 04, 05, 06 (No TX ON).
+
+RCL, #, 35      HIGH TONE ON    Activate the high audio tone (1150 Hz) and
+                                apply it to the receive-audio line. You hear
+                                the high tone from the speaker.
+
+RCL, #, 36      HIGH TONE OFF   Deactivate the high audio tone. Tone stops.
+
+RCL, #, 37      LOW TONE ON     Activate the low audio tone (770Hz) and apply
+                                it to the receive-audio line. You hear the 
+                                low tone from the speaker.
+
+RCL, #, 38      LOW TONE OFF    Deactivate the low audio tone. Tone stops.
+
+RCL, #, 39      INVM            Initialize non-volatile memory. Set registra-
+                                -tion memory and clear all the speed-dial
+                                memories. Set the Lock State to activate
+                                (Fully Locked).
+
+RCL, #, 42      DTMF ON         It sounds DTMF tones, a responce from each
+                                pressed key. It sends the signal to RX AUDIO
+                                and TX AUDIO lines.
+
+RCL, #, 43      DTMFOFF         Deactivates DTMF generator. DTMF tones stop.
+
+RCL, #, 48      TONE-OFF        Deactivate alert tone and external call 
+                                alert. The alert tones stop.
+
+RCL, #, 49      TX-DISE         Deactivate TX ENABLE line. Disable the 
+                                transmitter.
+
+RCL, #, 50      STATUS REPEAT   Status Repeat at Test Mode.
+                (TEST MODE)
+
+RCL, #, 51      MON             Monitors the port status.
+                                "      ABCD" (Mid line of LCD display).
+                                A: HOOK         1 = ON HOOK
+                                B: EXT PS       1 = BATTERY MOUNTED
+                                C: ADP MON      1 = ADAPTER CONNECTED
+                                D: HF MON       1 = HANDS FREE
+
+RCL, #, 57      TX-ENABLE       Activate TX ENABLE line. Enable transmitter.
+
+RCL, #, 60      AUDIO PATH      Set the Audio Path.
+                                "      60-X" (Mid line of LCD display).
+                                X: 0 = HF
+                                   1 = SPK
+                                   2 = ALT
+                                   3 = HS
+
+RCL, #, 61      STATUS-REPEAT   Without suspend. It shows the status
+                                information of the unit by 16 digits every
+                                second.
+                ----------      ----------
+Example:        TEST  MODE      TEST  MODE    Press 1 and # for display on.
+                       61-            61-1    Press 0 and # for display off.
+                ----------      ----------
+                After the setting, press RCL, #, 02. The wake-up tone and
+                display come on. The 16 digit status information appears.
+                ----------      ----------
+Example:            119110          AAABCD
+                0003100363      EFGHIJKKKK
+                ----------      ----------
+Where:          AAA: Shows RSSI (Receiver Signal Strength) Value ranging from
+                     000 through to 255 (3 digits).
+                B:   Shows RXM (Receiver Audio Mute) or Receiver audio gate
+                     on/off. 1 = muted or gate off.
+                C:   Shows TXM (Transmitter Audio Mute) or Transmitter audio   
+                     gate on/off. 1 = muted or gate off.   
+                D:   Shows WS (Word Synchronization) in FOCC. 1 =WS acquired.        
+                E:   Shows B/I (Current state of the busy idle bit of FOCC).
+                     1 = idle  0 = busy.
+                F:   Shows CARR (carrier) on/off. 1 = off.   
+                G:   Shows ST (Signalling Tone) on/off. 1 = ST on.   
+                H:   Shows SAT (Supervisory Audio Tone) on/off. 0 = 5970Hz,  
+                     1 = 6000Hz,  2 = 6030Hz  and  3 = No SAT.
+                I:   Shows MODE. 1 = Control channel,  0 = Voice channel.   
+                J:   Shows Transmission Power Reduction Level.   
+                           0 to 2 = No reduction.
+                           3 = -4dB.
+                           4 = -8dB.
+                           5 = -12dB.
+                           6 = -16dB.
+                           7 = -20dB.
+                KKKK: Shows Channel Number, ranging from 0000 through 0600 &
+                      1329 through 2047 (4 digit).
+
+RCL, #, 69      SCAN SLOW       Measure the Received Signal Stength Indicati-
+                                -on (RSSI) signal at each channel.
+                                Shows each channel number and it's RSSI level
+                                on the display.
+Example:        ----------      ----------
+                TEST  MODE      TEST  MODE     Simply press # key or
+                       69-            69-1     press channel number and #.
+                ----------      ----------  
+                To activate the SCAN SLOW command, press RCL. # 69, XXXX, #.
+                Where XXXX = starting channel number (1 through 6000, 1329
+                through 2047). If you don't enter the channel number and
+                press # key, then the channel will begin from 0001. The unit
+                measures the RSSI at each channel, scanning from the channel
+                number you set. The scanning speed is 0.5secs per channel.
+                The unit shows each channel number and it's RSSI level on
+                the display "XXXX-sss" (On Mid line).
+                ----------
+                TEST  MODE       Where: XXXX = Channel number
+                  XXXX-sss               sss = RSSI
+                ----------
+                Pressing * key while scanning causes the unit to pause.
+
+                Pressing * key again resumes scanning. To end scanning press
+                the # key. The radio channel will be fixed at the first 
+                channel number and is ready to accept other commands. If you
+                press other keys other than the * or # the unit ignores them
+                and gives back a short alarm tone.
+
+RCL, #, 70      KEYPAD PROGRAM2 Allow you to do NAM programming via the 
+                                keypad. See appendix C.       
+                                
+RCL, #, 71      KEYPAD PROGRAM1 Allow you to do NAM programming via the
+                                Keypad. See appendix C.
+
+NOTE: This file contains the reference from Appendix A only. If you have or
+can get information from appendix C, please add it to the end of this file.
+
+RCL, #, 72      I/O DATA OUT    Writes data (0-255) or I/O (0-127).
+                                Address is 00FF00H-0FF7FH
+                                        XXX   YYY  (Mid Line)
+                                           XXX = Address
+                                           YYY = Write Data
+
+RCL, #, 73      AEC ON          Turns AEC (Automatic Efficiency Control) on.
+
+RCL, #, 74      AEC OFF         Turns AEC (Automatic Efficiency Control) off.
+
+RCL, #, 75      CDATA OFF       Stops CDATA transmission.
+
+RCL, #, 77      LOAD SYNTH 2    CH assignation to TX/RX synth.
+                                "TXXXXRYYYY" (Mid Line).
+                                   XXXX = TX channel
+                                   YYYY = RX channel
+
+RCL, #, 78      SET DEFAULT DATA It writes default data into AF IC & EEPROM.
+
+RCL, #, 79      WRITE ADJUST DATA It writes to AF IC and EEPROM the adjust-
+                (MAX DEV.)        -ment data that specifies the MAX 
+                                  deviation for each unit.
+
+RCL, #, 80      WRITE ADJUST DATA It writes to AF IC and EEPROM the adjust-
+                (EXT IN)          -ment data that specifies the EXT IN data
+                                  for each unit.
+
+RCL, #, 81      WRITE ADJUST DATA It writes to AF IC and EEPROM the adjust-
+                (DTMF)            -ment data that specifies the DTMF data
+                                  for each unit.
+
+RCL, #, 82      WRITE ADJUST DATA It writes to AF IC and EEPROM the adjust-
+                (MIC)             -ment data that specifies the MIC data
+                                  for each unit.
+
+RCL, #, 83      WRITE ADJUST DATA It writes to AF IC and EEPROM the adjust-
+                (TX DATA)         -ment data that specifies the TX data
+                                  for each unit.
+
+RCL, #, 84      WRITE ADJUST DATA It writes to AF IC and EEPROM the adjust-
+                (SAT)             -ment data that specifies the SAT data
+                                  for each unit.
+
+RCL, #, 85      WRITE ADJUST DATA It writes to AF IC and EEPROM the adjust-
+                (RX DATA)         -ment data that specifies the RX data
+                                  for each unit.
+
+RCL, #, 86      WRITE ADJUST DATA Sets power level and specific data of each
+                (POW LEVEL)       unit in EEPROM with 7 byte.(P0-P7, Spec, 
+                                  Data). Specific Data: Fine adjustment of 
+                                  output power level.
+                                  Example. RCL, #, 86, ___ #, ___ #.
+
+RCL, #, 87      WRITE DATA(RSSI)  Writes A/D transformed data of +10dBuV to
+                                  EEPROM to set at the position between block
+                                  two and three of the RSSI indication.
+                                  (between **--- and ***--).
+
+RCL, #, 88      MOD TRACKING ADJ  VCO Modulation Senstivity.
+
+RCL, #, 90      BATT            Shows the A/D converted value of the
+                                battery Voltage. "       XXX" (Mid Line).
+                                XXX = 0 to 255. (0 = fucked!).
+
+RCL, #, 91      TEMP            Shows the A/D converted value of the 
+                                Temperature inside the unit.
+                                XXX = 0 to 255. (000 = fried!).
+
+RCL, #, 94      COMPANDOR ON    Set the compandor circuit on.      
+
+RCL, #, 95      COMPANDOR OFF   Set the compandor circuit off.
+
+RCL, #, 99      KEYPADPROGC++   Write applications to run with the Intel
+                                80386, 486 family of processors via the
+                                units keypad.
+                                Example: Write DOS and Windows applications
+                                in C++, write a Bluebox prog etc.
+                                Refer to the P3 C++ prog ref for further info
+                                also refer to DOS and Windows references.
+                                Note: This function only works with the P3 
+                                I/O card for connection to the CPU of a PC.
+
+Note: All information given in this file is from Appendix A of the P3 Test
+ROM manual, it is documented as per appendix A apart from the last couple
+of remarks under BATT and TEMP (i.e. Fucked! and Fried!) also the last test
+code 99 is a load of rubbish, well after writing all this long boring tech
+file about a phone that can do everything! I could resist added it! <g>.
+
+Notes and Examples.
+===================
+This section has been put here for you to add further notes about funtions
+you have found. Then please re-upload as next revision.
+----------------------------------------------------------------------------
+i.e.
+1) Using the Phone capture other ID's. (I wish). by DREAMER.
+In test mode use RCL, #, 98 and take down all the information that pops up
+every second. *** Example only, put yours like this below ***.
+----------------------------------------------------------------------------
