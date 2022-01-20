@@ -1,0 +1,25 @@
+                               Motorola Elite
+
+                                 -----------
+Follow the general recommendations for programming the other Motorola models
+  regarding system speed, etc. These are the schematics to connect Motorola
+                 elite to computer using the mot32 program.
+
+DB25              VIP
+ 2 --|<------------ 9--|  (Manual Test)
+18 ---------------- 6  |  (GND)
++8...12 volts ----- 2  |  (Ext B+)
+13 ---------------- 3  |  (T Data)
+12 ---------------- 4  |  (C Data)
+ 1 ---------------- 5--|  (R Data)
+ 4 --|<------------ 7     (Audio Out)
+
+Phone will read okay, but some users report problems with multiple ESN
+changes. Would the BADTYPE program fix this? Depending on the software
+version, maybe only a single ESN change is possible. Please report your
+results.
+
+Thanks to ERRE ESSE
+
+pinout of the elite.
+  ------------------------------------------------------------------------
