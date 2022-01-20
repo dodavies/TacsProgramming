@@ -1,0 +1,23 @@
+Cable Design's for the Motorola "Brick", Ultra Classic Phone.
+Selection "H" on Motorola Software. Released by Puppet Master
+and The High Tech Hoods on The New York Hack Exchange BBS 93'
+
+                             back of the phone
+                          �����������������������Ŀ
+ Numbers = Computer Port  � A B C  ����Ŀ  D E F  �
+              (LPT1)      �        �    �         �
+ Letters = Connections On � � � �  �    �  � � �  �      For Power Supply:
+       Back of Phone      �        �    �         �    �������������������Ŀ
+                          � G H I  �    �  J K L  �    �  7.5 - 8.5 Volts! �
+  1 --   K                �        �    �         �    �                   �
+  2 --   F                � � � �  �    �  � � �  �    �  -             +  �
+  3 --   C                �        �    �         �    �  �             �  �
+  4 --   D                �        �    �         �    ���������������������
+  12 -   J                �        �    �         �
+  13 -   H                �        ������         �
+  18 -   G                �                       �
+                          �������������������������
+   This is the "CORRECT" design if your are soldering wires directly to the
+ phone! If you have any problem just contact me on The New York Hack Exchange
+
+                                                           Puppet Master
