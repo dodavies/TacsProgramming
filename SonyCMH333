@@ -1,0 +1,50 @@
+Sony CMH-333 Cellular Telephone
+
+There seem to be two types of cmh-333's out there, with two different NAM
+programming sequences. One is the marsbar.txt (old method),so called because
+I had it before the cmh-333.txt (new one).
+To change the ESN, there is a program by The Cheese Factory that requires a
+cable to be built. 
+
+Here's a diagram of the cable required:
+
+The end of the cable that connects the phone is a bit tricky. I myself have a
+load of little PCBs that slot into the correct part of the phone and I solder
+the wires onto this every time I make a cable up. If you know me personally
+I can sort you out with an end, if not they're easy enough to make up on a 
+PCB machine, and if you're _really_ stupid you can buy the cables at next to
+nothing prices out of Exchange & Mart or something these days.
+              
+               
+           _________________                 _________________
+          |  | | | | | | |  |               |  | | | | | | |  |
+          |  | | | | | | |  |               |  | | | | | | |  |
+          |          | | |  |               |        |     |  |
+          |          | | |  |               |        |     |  |
+          |          |  \|  |               |        |     |  |
+          |          |   |  |               |        |     |  |
+          |          |   |  |               |        |     |  |
+          |_________ | _ | _|               |_______ | ___ | _|
+                     |   |                           |     |
+                     |   |                           |     |
+                     |   |                           |     |
+                     |   |                           |     |
+                    [R]  |                           |     |
+                     |   |                           |     |
+                     |   |                           |     |
+                    [19] [20]                       [11]  [8]
+
+
+Value of Resistor R = 10k
+Numbers in square brackets represent Pin number on D-Plug (-> Printer Port)
+
+The large squares represent the top and underside of the phone end of the 
+cable. You should have a small PCB with 7 contacts at the end (represented
+by  |  in the diagram above).
+    | 
+
+As you can see I was never any good at ASCII diagrams...
+
+That should set you on your way.
+
+=(*)=Pulse=(*)=  
