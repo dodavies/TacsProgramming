@@ -1,0 +1,129 @@
+Sony CMH-333 NAM Programming instructions:
+------------------------------------------
+
+
+Programming mode:
+
+1)  Turn on phone
+
+2) Enter the password "76692643" within 10 seconds after "on" has
+appeared on the display.
+
+The display will read:
+"n1-1 n2-2"
+n1-1= NAM 1
+n2-2= NAM 2
+
+3) Select the NAM you wish to program by entering 1 or 2 on the
+keypad.
+
+The display will read:
+Ab-1 Fu-2
+Ab-1 = Abbreviated programming mode.  Allows you to enter the first
+five (1-5) programming parameters.
+
+Fu-2 = Full programming mode.  Allows entering all 14 parameters.
+
+4) Select 1 or 2 on the keypad for Abbreviated or Full programming
+mode.
+
+
+
+Clearing a NAM:
+
+Clearing the NAM results in the seventh digit of the MIN programming
+parameter being changed to a line mark.  This is equivalent to there being
+no number in the parametr.  All other programming parameters remain the same.
+If the NAM is cleared the user will not be allowed access to it by the RCL 5
+key sequence.  (refer to the owners manual)
+
+After you have have selected the NAM in programming mode, the display
+will read Ab-1 Fu-2.  Press the SEND key.  The display will read
+"clear 1" or "clear 2".  The phone will then restart.
+
+
+
+Key functions:
+
+Power - exit programming mode without storing new data in NAM
+END - Exit programming mode wil storing new data in NAM
+RCL - Go back to the previous parameter
+STO - Got to the next parameter
+
+
+
+ESN:
+
+The esn is located under the batter in the battery compartment.
+It is obtained by adding 1540 to the front of the 7 digit serial
+number.
+
+
+
+Programming Steps:
+
+Display	Description    	   Possible Entries   Default     Digits  Press
+1	System ID of home   00000 to 32767	00000	    5	  STO
+        mobile service area
+
+2  Area Code & phone numb.  0000000001-  	1231234567  10    STO
+			    9999999999
+
+3 Area Code (used when      000-999		123	    3     STO
+  calling own phone numb.
+
+
+4 IPCH (inital paging       0000 - 9999		0333        4     STO
+  channels in home
+  service area)
+
+
+5 PS (preferred system)	    1=A 0=B             1           1     STO (full)
+                                                                  END (Abbrev)
+
+6  Options:		    0000000 - 1000110   100010      7bits  STO
+   A: Call Timer Display    ABCDEFG
+                            A: 0=deactivate displ.
+                               1=activate displ
+
+   B: Reserved              B: Set to 0
+   C: Reserved              C: set to 0
+   D: Reserved              D: set to 0
+   E: Caller timer          E: 0=out & in 
+      counts outgoing &        1=out only
+      incoming calls
+   F: Call Timers           F: 0=deactivate
+                               1=activate call
+                                  timers
+
+7 RH Roam Inhibit	    0=roam allowed       0          1       STO
+                            1=roam inhibit
+
+
+8 Local Use Mark            0=Disabled           1          1       STO
+                            1=Enabled
+
+9 MIN (mobile ID number)    Set to 1             1          1       STO
+
+10 SCM (Station Class       Set to 1110         1110        4bits   STO
+   Mark)
+
+11 Initial Dedicated        Set to 0333         0333        4       STO
+   Control Channel for
+   System A
+
+12 Initial Dedicated        Set to 0334         0334        4       STO
+   Control Channel for
+   System B
+
+
+13 GIM Group ID Mark        00-15               00          2       STO
+
+14 ACCOLC  Access Overload  00 to 09            07          2       END
+   Class (0+last digit of                                           (store & exit)
+   phone number)
+
+
+
+-end
+
