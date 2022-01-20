@@ -1,0 +1,97 @@
+How to build and use a programming cable for the Ericsson GH388
+
+This file instructs one on how to build a cable to reprogram the GH337 from a standard
+serial port. Much of this info is taken from a file "How to activate built-in calculator 
+and RBS-info", author unknown. Use of this cable may violate your phone's warrantee or your 
+service agreement. USE AT YOUR OWN RISK.
+
+Connect RS232 to phone via a TTL to RS232 converter.
+
+[Dr Who's Note: It occurs to me that some older computers, such as the 
+Commodore 64, use TTL levels already, so no conversions is neccessary with
+them. It remains to be seen, however, if they can successfully do 9600 bps]
+
+NOTE! You can NOT connect the RS232 directly to the phone,
+      you MUST use a TTL to RS232 converter!
+      
+        Pin 8   DC GND                           ->  ComPort GND
+        Pin 11  RXD (TTL serial data TO phone)   ->  ComPort TXD
+        Pin 12  TXD (TTL serial data FROM phone) ->  ComPort RXD
+
+Connect external 5 volts to Pin 9 (FLASH 5/12volts input)
+(Pin 6 SWDC5 [5 volts out] to pin 9 may also work, but have not tried it)
+
+Pin 1 is leftmost pin (near Mic), when looking at the front/bottom.
+
+The communications port parameters should be 8 data bits, 1 stop bit, and
+no parity. Communications speed can be as low as 9600 baud (maybe lower),
+but if set for 115200 baud, the phones operations are shown as they are
+done (i.e. communicating with RBS, reading SIM, etc.)
+ Here's an example, from a GH-337, does the GH-388 display the same info?
+
+  From: Dave Plumb <dplumb@cix.compulink.co.uk>
+  ----------------------------------------------
+  RR_ACT_REQ , PLMN = F432 0003
+  MM state 4
+  
+  Get FCH on ARFCN = 618  Rxlev = -93
+
+  Get SCH on ARFCN = 618
+  Old TCXO value 128
+  Intermediate TCXO value 128
+  New TCXO value 128
+  FirstPhaseDiff = 1, SecondPhaseDiff = 1
+  ----------------------------------------------
+
+ 
+
+Power on phone by pressing "NO/ENDpwr".
+When performing its powerup sequence the phone will send &quot;2&quot;.
+Within 1 second, reply to it by sending the 2 character sequence "0B". 
+The computer will respond "R". At this time, you must send it the sequence 
+contained in this file <a href="jumpserv.bin">jumpserv.bin</a>. The phone 
+will respond "SP, OK", and the computer should display "R".
+
+WARNING! There have been suggestions that reading to and writing from certain
+locations in memory (specifically the IMEI and SPCK locations) will erase the
+phones EEPROM! Be Careful!
+
+Test the TEST PROGRAM by sending the commands terminated by a <CR>:
+ (These are for the GH-337, do they work on the 388?)
+        PROG 0          (shows Test Program product number info)
+        PROG 1          (shows Test Program product date info)
+        PROG 3          (Shows Main Application product number info)
+        PROG D          (Shows Main Application product date info)
+
+EEWE [address] [value]   writes a value to the given address, given in hexadecimal. The 
+following functions can be done with this. I am sure there are many more. These functions 
+require the phone to be turned off, then on again after this programming.
+
+        EEWE 03EE 	01 = enable built-in calculator and RBS info. 00 = disable
+	EEWE 03CF	00 = disable electronic lock, place 00 in all these locations
+	EEWE 03D0	00 = disable electronic lock, place 00 in all these locations
+	EEWE 03D1	00 = disable electronic lock, place 00 in all these locations
+	EEWE 03D2	00 = disable electronic lock, place 00 in all these locations
+	EEWE 03D3	00 = disable electronic lock, place 00 in all these locations
+	EEWE 03D4	00 = disable electronic lock, place 00 in all these locations
+	EEWE 03D5	00 = disable electronic lock, place 00 in all these locations
+	EEWE 03D6	00 = disable electronic lock, place 00 in all these locations
+	EEWE 03D7	00 = disable electronic lock, place 00 in all these locations
+	EEWE 03D8	00 = disable electronic lock, place 00 in all these locations
+	EEWE 03D9	00 = disable electronic lock, place 00 in all these locations
+	EEWR 03DA	00 = disable electronic lock, place 00 in all these locations
+
+EERE [address]  [number-of-bytes] reads the contents of a single memory address.
+Pressing G several times gets wierd features - these still need to be mapped. 
+K returns from this mode
+
+PREA is from the GH-337 - does this work on the 388?
+PREA [bank] [address] [bytes-to-read]  displays the contents of the memory starting at 
+[address]. The value at the end is the checksum for the bytes read. [bank] can be 00 
+through 7F, [address] can be 0000 through BFFF, and [bytes-to-read] can be 0000 through BFFF.
+PREA FF returns the checksum of the entire application.
+
+LIME - List IMEI. WARNING! There are rumors that this will disable the phone!
+
+There is a way to flash the EEPROM, but a special sequence is needed to 
+do this. When I get it I will place it on this page.
