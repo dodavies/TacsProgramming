@@ -1,0 +1,240 @@
+             -----//-> [ELLpHoNE [rAcKiNG [oRpoRaTioN <-\\-----
+
+
+The following text contains all the info required to Re-program
+your P3's ESN and MIN.
+
+First the Cable:-
+
+Instructions for Wiring and Connection of PC to NEC "P3" Unit.
+
+Note: Connections are made via the PC's "Printer" Port - LPT1
+
+Pinout for P3 Eliminator plug viewed from the Solder tag side. 
+
+
+Pins are as follows:   1 - Audio out (EAR)
+                       2 - Audio out (EAR/SPEAKER)
+                       3 - Audio out (SPEAKER)
+                       4 - SDATA (Serial Data)     1 2 3 4 5 6
+                       5 - No Connect              o o o o o o
+                       6 - VCC (+8v)             O
+                       7 - No Connect              o o o o o o
+                       8 - Audio in (MIC)          7 8 9 1 1 1
+                       9 - GND                           0 1 2
+                      10 - BUSY
+                      11 - SCLK (Serial Clock)
+                      12 - GND
+
+                                       
+P3 cable connection pinout.
+
+            25 Way 'D' (Male)   -    P3 Adapter Plug
+
+               Pin - 12                 Pin - 4  
+
+               Pin - 13                 Pin - 10 
+
+               Pin - 15                 Pin - 11 
+
+               Pin - 25                 Pin - 12
+
+     
+      Link the Following Connections in the 25 Way Connector as follows
+      with Signal Diodes. (1N4148)
+
+               Pin - 3   ----[ |   ]----   Pin - 12
+
+               Pin - 6   ----[ |   ]----   Pin - 13
+
+                  (+)    ----[ |<  ]----   
+
+
+P3 cable connection diagram viewed from the Solder tag side.
+
+
+25 Pin D-plug                    Eliminator Plug
+   (Male) 
+
+
+Eliminator
++ Volts :::::::::::::::::::::::::::::::::::::
+                                            :
+Pin 3  ::::::|<1N4148::::                   :
+                        :                   :
+Pin 12 ::::::::::::::::::::::::::::::::::   :
+                                        :   :
+                                        :   :
+                                  o o o o o o
+             Aerial Socket-->  O
+                                  o o o o o o
+                                        : : :
+                                        : : :
+Pin 13 :::::::::::::::::::::::::::::::::: : :
+                        :                 : :
+Pin 6  ::::::|<1N4148::::                 : :
+                                          : :
+Pin 15 :::::::::::::::::::::::::::::::::::: :
+                                            :
+Pin 25 ::::::::::::::::::::::::::::::::::::::
+                                            :
+Eliminator                                  :
+- volts :::::::::::::::::::::::::::::::::::::
+
+
+Note Diode Protocol: Cathode (+) ::::|<1n4148::::: Anode (-)
+
+Eliminator +/- volts connections are optional, but save your battery.
+Connect a 12 power supply to the Lighter adapter plug, centre pin
+is + volts connection.
+                          
+Parts list:-
+
+P3 eliminator Cable(The one that plugs into the bottom of phone
+with all pins, some only have 2 pins, avoid these!)
+1N4148 Signal diodes.
+25 Way Male 'D' Connector + cover.
+5 core screened cable.
+
+
+NEC P300
+
+NAM programming:
+
+Note: Write down all the Nam settings before changing any values
+so the phone can be returned to original settings if required.
+
+ACCESSING PROGRAMMING MODE:
+
+1.  With the power off connect the NEC programming adapter.
+
+2.  Turn power on.
+
+3.  Run Read.exe
+
+4.  Note Number on Display (Current ESN).
+
+5.  Press and hold CLR till display shows TEST MODE.
+
+6.  Press RCL # 7 1.
+
+7.  Press # to increment and store each step.
+
+8.  At any time press and hold CLR to goto TEST MODE display.
+
+9.  From TEST MODE display Press RCL # 0 2 to Reset phone.
+
+
+PROGRAMMING DATA
+
+STEP#    #OF DIGITS/RANGE    DISPLAY        DESCRIPTION
+
+01       10 DIGITS           Phone No.      MIN (AREA CODE & TEL#)
+02       4 DIGITS            Lock Code      LOCK CODE
+03       00000 - 32767       Home Area      SYSTEM ID Cellnet=03600,Vodafone=02051
+04       0 OR 1              Sys Select     0=Vodafone,1=Cellnet (0=B, 1=A)
+05       4 Digits            System No.     Dialing Code i.e. 0850
+06       0 OR 1              Roam           0=No,1=Yes (Always 0)
+07       0 OR 1              Timer SW.      0=Charge RT,1=Voice Charge (Always 1)
+08       00 - 99             Priority       Normally about 9,set it to 15
+09       0 OR 1              Call Timer     0=All,1=Call out (set to 0)
+
+
+
+LOCK & UNLOCK: F 6 four digit code then press 1 and scroll with volume keys to
+select: Normal, PL (Partial Lock), FL (Full Lock), press STO to store.
+
+
+ESN programming:
+
+
+1.  With the power off connect the NEC programming adapter.
+
+2.  Turn power on.
+
+3.  Run Read.exe
+
+4.  Note Number on Display (Current ESN).
+
+5.  Press and hold CLR.
+
+6.  Press RCL # 0 2.(To Reset phone)
+
+7.  Run Chip.exe
+
+8.  Press P to select P300
+
+9.  Type in ESN, Format= AA/BB/CC/DDDDD
+
+10. Press Enter.
+
+
+Thats all the info you require to program the Nam, the ESN and to make the
+cable required. I have included a file on the Test Rom functions
+(P3TST002.TXT) which has some other info that is Helpful.
+
+Also included are the programs Read.EXE and Chip.EXE for reading and
+programming the P3's ESN!!!!
+
+Some other files which are of use are:-
+
+P3UTIL09.ZIP by Skios
+P3MODEM.ZIP  by Skios
+
+Available from all good BBS's including DAC-UK, Vicious Circle II and Orbital.
+
+Greets to:
+
+T-force, Phoenix, The Bitch, Hagar, Blackthorn, Rob/CSL, Pulse, Scribla, Smurf
+Skios, Sir Snooze and not forgetting Smeg Servant!!!! 
+
+If you have got any questions, comments etc leave me (TuRbO) mail on any of
+the BBS's mentioned above!
+
+                               [*] TuRbO [*]    
+
+                           [*] FaSt WaReZ/CCC [*] 
+
+             -----//-> [ELLpHoNE [rAcKiNG [oRpoRaTioN <-\\-------PART-BOUNDARY=.19810130934.ZM22612.rhumba
+X-Zm-Content-Name: p3romfit.txt
+Content-Description: Text
+Content-Type: text/plain ; name="p3romfit.txt" ; charset=us-ascii
+
+Fitting Instructions for new Timer Controller ROM.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enclosed you will find chip/s for your Timer Controller system <g>. Take Anti-Static Precautions.
+
+
+How to fit. 
+===========
+(You will need at least two watch-maker screwdrivers, a small Philips type and 
+a small flat bit. Also you may need a pair of thin nose pliers or tweezers).
+
+Remove any power source to or on the unit etc. Ensure you are static free 
+(touch something that is earthed) before handling. Now remove the casing of the unit (if you don't know how to do this and you have the special screws, then
+use the pliers or tweezers and slot the two leg ends of these tools into two
+opposite sections of the screw then undo anti-clockwise). Now remove the large
+metal unit by removing the three small Philips screws plus a coax lead (and
+unplug the coax plug).
+
+Now you should be able to see the main PCB and the chip holder with its top and
+screen. To remove the holder you will need to raise one edge with the flat bit 
+screwdriver and it should pop off. The screen then has to be lifted, however it is OK to cut this part off as the unit works OK without it. Now you have access
+to the original chip, to remove this you simply just use the small bit
+screwdriver (carefully) and raise one corner (do the other one simultaneously 
+if you need to), the chip should now pop out. The markings for the socket and
+chips are as follows;
+
+Pin one for the socket is noted by an arrow (triangle) in the middle of the top of the socket (the top of the socket is mounted to the right of the PCB).
+Looking down at the PCB with the power compartment at the bottom, the arrow 
+will be on the right of the PCB in the middle of the socket. The original chip
+has an indicator for pin one underneath it. The new chips have a little hole 
+on top of them.
+
+When fitting the new chip/s push them in with even pressure and ensure that the
+top is level with the socket (no deeper). They may be a very tight fit, so take
+it easy. To remove them just use the screwdriver again to lift the edge and 
+then slide it underneath to lift the entire chip (check the pins are OK). To
+test the unit simply put it all back together without the screws but ensure 
+the coax is reconnected and hold it together whilst testing.
+
