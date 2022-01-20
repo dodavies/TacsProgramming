@@ -1,0 +1,40 @@
+ESN transfer on Ericsson EH237 & EH238
+
+
+You can activate the built in ESN transfer mode by entering M&922630. 
+This means hold down the 'M' or function button and then entering 922630 
+within 10 seconds to activate this mode.
+
+You will need the same serial cable as described at your web site but 
+this time, you need reverse the data in and data out pins to the other 
+phone.
+
+Whit the keyboard looking up and you looking at the terminals of the 
+connector, the terminals are numbered (from left to right) 14 down to 1
+
+Keyboard up
+________________
+|..............|
+|14           1|    Pin 11 is data from external source
+                    Pin 12 is the data to the phone
+
+All data to the phone is at 600 Baud, 8 bits with logic '1' being 4.8V 
+and logic '0' being 0 V. This means you need an RS 232 to TTL converter
+
+Pin 9 is used to enable you to program the Flash EEPROM in the phone.
+Open is the normal operating mode.
++5V is test mode
++12 is Programming mode for ESN's and software changes etc.
+
+Pin 8 is the necessary digital ground for doing anything.
+
+There is yet another test code you can experiment with from the keyboard.
+
+Just enter M& 90510# and the unit will display the overhead message and 
+status of the phone.
+
+Have fun !
+
+regards
+
+LaserMan
