@@ -1,0 +1,100 @@
+
+
+NEC P3 Pinout & How to Build a Modem Adapter 
+
+(Written in crappy english by SkioS, 1995)
+
+
+
+Well if you've got a NEC-P3 and want to use it with your modem I hope this
+
+file helps you make the wirings... you'll need some electronic skills...
+
+First you  have to buy one of these lighter adapters in order to get a
+
+connector for the phone, most of them will come with all the pins and are
+
+quite easy to open (usually just two screws). If you're lucky pins will be
+
+already numbered on the adapter, if not use the following pinout:
+
+  _____________________
+
+ /                    /|
+
+|--------------------| |   As seen when you get the cable (NOT the phone !!)
+
+| 6            1  _  | |   and look at it from outside (before opening it)
+
+|                (_) | |
+
+| 12           7     | |
+
+|--------------------|/
+
+
+
+Pins are as follows:   1 - Audio out (EAR)
+
+                       2 - Audio out (EAR/SPEAKER)
+
+                       3 - Audio out (SPEAKER)
+
+                       4 - SDATA (Serial Data)
+
+                       5 - No Connect
+
+                       6 - VCC (+8v)
+
+                       7 - No Connect
+
+                       8 - Audio in (MIC)
+
+                       9 - GND
+
+                      10 - BUSY
+
+                      11 - SCLK (Serial Clock)
+
+                      12 - GND
+
+
+
+As you see Audio is sent out on several pins. The most usual is to get it
+
+from pin 2, but I *guess* you can get it also from pin 1 for modem usage.
+
+Also you'll have to make 2 pullups on pins 2 & 3 to let the phone know it's
+
+attached to an external device and stop using its own ear, mic & speaker. Do
+
+it as follows:
+
+
+
+   3-----/\/\/\----- Vcc            2-----/\/\/\----- Vcc
+
+          1 k                         |    47 k
+
+                                      |
+
+                                      |-----> Audio Out
+
+
+
+Well, once you know how to get audio in & out from the phone just get that
+
+file from DaveX on how to build a modem andapter for the Motorola phones
+
+and build it just the same. You should use capacitors in order to provide
+
+DC isolation. It's also a good idea to power the phone from the adapter,
+
+that way you won't run out of batteries :))
+
+
+
+If you've got any doubts or comments just leave me a note (SkioS) on some
+
+board like Arrested Development, Hackers Haven or DAC-UK... Have fun !!!
+
